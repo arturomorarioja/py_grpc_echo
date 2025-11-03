@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+service Echo {
+    rpc Say(Message) returns (Message);
+}
+
+message Message {
+    string text = 1;
+}
