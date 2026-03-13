@@ -3,7 +3,9 @@ import echo_pb2 as pb
 import echo_pb2_grpc as rpc
 
 def run():
-    channel = grpc.insecure_channel("localhost:50051")
+    PORT = 50051
+
+    channel = grpc.insecure_channel(f"localhost:{PORT}")
     stub = rpc.EchoStub(channel)
 
     message = input("Enter a message: ")
